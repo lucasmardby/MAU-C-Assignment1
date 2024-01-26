@@ -1,0 +1,14 @@
+E:\Code\MAU C# Assignment1\ConsoleApps\bin\Debug\net6.0\ConsoleApps.exe
+E:\Code\MAU C# Assignment1\ConsoleApps\bin\Debug\net6.0\ConsoleApps.deps.json
+E:\Code\MAU C# Assignment1\ConsoleApps\bin\Debug\net6.0\ConsoleApps.runtimeconfig.json
+E:\Code\MAU C# Assignment1\ConsoleApps\bin\Debug\net6.0\ConsoleApps.dll
+E:\Code\MAU C# Assignment1\ConsoleApps\bin\Debug\net6.0\ConsoleApps.pdb
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ConsoleApps.GeneratedMSBuildEditorConfig.editorconfig
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ConsoleApps.AssemblyInfoInputs.cache
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ConsoleApps.AssemblyInfo.cs
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ConsoleApps.csproj.CoreCompileInputs.cache
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ConsoleApps.dll
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\refint\ConsoleApps.dll
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ConsoleApps.pdb
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ConsoleApps.genruntimeconfig.cache
+E:\Code\MAU C# Assignment1\ConsoleApps\obj\Debug\net6.0\ref\ConsoleApps.dll

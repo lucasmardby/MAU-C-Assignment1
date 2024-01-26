@@ -4,17 +4,62 @@
     {
         static void Main(string[] args)
         {
-            var petObj = new Pet();
-            petObj.PetStart();
+            var readResult = "";
+            var exitProgram = false;
 
-            var ticketObj = new TicketSeller();
-            ticketObj.TicketSellerStart();
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Welcome to Assignment 1, made by Lucas Mårdby");
+                Console.WriteLine();
+                Console.WriteLine("Pick a number to enter one of my classes!");
+                Console.WriteLine("[1] Pet Class\n[2] TicketSeller Class\n[3] Album Class\n[4] Book Class (My own class),");
+                Console.WriteLine("Or type 'Exit' to exit the application.");
+                Console.WriteLine();
 
-            var albumObj = new Album();
-            albumObj.AlbumStart();
+                readResult = Console.ReadLine();
 
-            var bookObj = new Book();
-            bookObj.BookStart();
+                switch (readResult.ToLower())
+                {
+                    case "1":
+                        var petObj = new Pet();
+                        petObj.PetStart();
+                        break;
+
+                    case "2":
+                        var ticketObj = new TicketSeller();
+                        ticketObj.TicketSellerStart();
+                        break;
+
+                    case "3":
+                        var albumObj = new Album();
+                        albumObj.AlbumStart();
+                        break;
+
+                    case "4":
+                        var bookObj = new Book();
+                        bookObj.BookStart();
+                        break;
+
+                    case "exit":
+                        exitProgram = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Please try again!");
+                        HelperMethods.ConfirmationButton();
+                        Console.Clear();
+                        break;
+                }
+
+            } while (exitProgram == false);
+            
+
+            
+
+            
+
+            
 
         }
     }

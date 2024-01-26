@@ -6,11 +6,9 @@
         private int age;
         private bool isFemale;
 
-        private string readResult = null!;
-        private bool validInput;
-
         public void PetStart()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to the Pet class!");
             Console.WriteLine();
 
@@ -24,7 +22,7 @@
         {
             Console.WriteLine("What is the name of your pet?");
             name = Console.ReadLine();
-            
+
             /*Checks if pet name ends with 's' or not,
             to write a grammatically correct sentence*/
             if (name.ToLower().EndsWith('s'))
@@ -35,13 +33,26 @@
             {
                 Console.WriteLine($"What is {name}'s age?");
             }
-            age = Convert.ToInt32(Console.ReadLine());
+            var validInput = false;
+            do
+            {
+                var readResult = Console.ReadLine();
+                if (int.TryParse(readResult, out _))
+                {
+                    validInput = true;
+                    age = Convert.ToInt32(readResult);
+                }
+                else
+                {
+                    Console.WriteLine("Try again. Enter a proper number for the age.");
+                }
+            } while (validInput == false);
             
             Console.WriteLine("Is your pet a female? (y/n)");
             //do-while loop to make sure user input is valid
             do
             {
-                readResult = Console.ReadLine().ToLower().Trim();
+                var readResult = Console.ReadLine().ToLower().Trim();
                 if (readResult == "y")
                 {
                     isFemale = true;

@@ -11,7 +11,8 @@
 
         public void TicketSellerStart()
         {
-            Console.WriteLine("Welcome to LISEBERG!\nChildren always get a 25% discount!");
+            Console.Clear();
+            Console.WriteLine("Welcome to KIDS' FUN FAIR!\nChildren always get a 25% discount!");
 
             ReadInput();
             CalculateAmountToPay();

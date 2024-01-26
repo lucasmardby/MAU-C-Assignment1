@@ -8,6 +8,7 @@
 
         public void AlbumStart()
         {
+            Console.Clear();
             Console.WriteLine("Starting the Album program!");
             Console.WriteLine();
 
@@ -32,7 +33,20 @@
         private void ReadTracks()
         {
             Console.WriteLine($"How many tracks does {albumName} have?");
-            numOfTracks = Convert.ToInt32(Console.ReadLine());
+            var validInput = false;
+            do
+            {
+                var readResult = Console.ReadLine();
+                if (int.TryParse(readResult, out _))
+                {
+                    validInput = true;
+                    numOfTracks = Convert.ToInt32(readResult);
+                }
+                else
+                {
+                    Console.WriteLine("Try again. Enter a proper number for the amount of tracks.");
+                }
+            } while (validInput == false);
         }
         private void DisplayAlbumInfo()
         {

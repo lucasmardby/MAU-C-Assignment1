@@ -70,12 +70,12 @@ namespace ConsoleApps
                     bookLengthType = "Novella";
                     break;
 
-                case <= 350:
+                case <= 700:
                     Console.WriteLine($"Around {pageMath}, you say? Sounds perfect!");
                     bookLengthType = "Novel";
                     break;
 
-                case > 500:
+                case > 700:
                     Console.WriteLine($"It has around {pageMath}?? Sounds like a long book!");
                     bookLengthType = "Epic";
                     break;
@@ -129,7 +129,6 @@ namespace ConsoleApps
         {
             Console.WriteLine();
             Console.WriteLine("Based on your favourite book, may I recommend one of mine? (y/n)");
-            Console.ReadLine();
 
             string readResult;
             bool validInput;
@@ -197,7 +196,7 @@ namespace ConsoleApps
             Console.WriteLine("------");
             Console.WriteLine("So, your favourite book is:");
             Console.WriteLine($"{title}, written by {author}");
-            Console.WriteLine($"A {numOfPages} page long {genre} {bookLengthType}");
+            Console.WriteLine($"A {numOfPages} page long {genre.ToLower()} {bookLengthType.ToLower()}");
             Console.WriteLine("------");
 
             BookRecommendation();

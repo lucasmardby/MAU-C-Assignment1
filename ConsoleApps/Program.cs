@@ -1,5 +1,6 @@
 ﻿namespace ConsoleApps
 {
+    //Assignment 1: Console Application, by Lucas Mårdby
     internal class Program
     {
         static void Main(string[] args)

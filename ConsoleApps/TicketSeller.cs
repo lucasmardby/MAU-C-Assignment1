@@ -1,7 +1,9 @@
 ﻿namespace ConsoleApps
 {
+    //Task 2: TicketSeller class
     internal class TicketSeller
     {
+        //declaring fields for user input and prize calculations
         private string name = null!;
         private double price = 100;
         private double childDiscount = 0.25;
@@ -9,10 +11,11 @@
         private int numOfChildren;
         private double amountToPay;
 
+        //method executed in Program.cs
         public void TicketSellerStart()
         {
             Console.Clear();
-            Console.WriteLine("Welcome to KIDS' FUN FAIR!\nChildren always get a 25% discount!");
+            Console.WriteLine("Welcome to KIDS' FUN FAIR!\nChildren always get a 75% discount!");
 
             ReadInput();
             CalculateAmountToPay();
@@ -23,6 +26,7 @@
 
         private void ReadInput()
         {
+            //get name and number of adults/children
             Console.WriteLine();
             Console.WriteLine("Your name please:");
             name = Console.ReadLine();
@@ -34,6 +38,8 @@
 
         private void CalculateAmountToPay()
         {
+            /*calculate ticket prize based on number of guests
+              100 per ticket, with a 75% discount for children*/
             amountToPay = (price * numOfAdults) + (numOfChildren * (price * childDiscount));
         }
 

@@ -1,11 +1,14 @@
 ﻿namespace ConsoleApps
 {
+    //Task 1: Pet class
     internal class Pet
     {
+        //declaring Pet fields to be filled with use input.
         private string name = null!;
         private int age;
         private bool isFemale;
 
+        //method executed in Program.cs
         public void PetStart()
         {
             Console.Clear();
@@ -20,19 +23,18 @@
 
         private void ReadAndSavePetData()
         {
+            //get pet name
             Console.WriteLine("What is the name of your pet?");
             name = Console.ReadLine();
 
-            /*Checks if pet name ends with 's' or not,
+            /*Checks if pet name ends with "s" or not,
             to write a grammatically correct sentence*/
             if (name.ToLower().EndsWith('s'))
-            {
                 Console.WriteLine($"What is {name}' age?");
-            }
             else
-            {
                 Console.WriteLine($"What is {name}'s age?");
-            }
+
+            //get pet age, making sure the user enters a valid number
             var validInput = false;
             do
             {
@@ -49,7 +51,7 @@
             } while (validInput == false);
             
             Console.WriteLine("Is your pet a female? (y/n)");
-            //do-while loop to make sure user input is valid
+            //do-while loop to make sure user input is a valid yes or no
             do
             {
                 var readResult = Console.ReadLine().ToLower().Trim();

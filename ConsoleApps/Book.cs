@@ -1,15 +1,16 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace ConsoleApps
+﻿namespace ConsoleApps
 {
+    //Task 4: additional class for the higher grade
     internal class Book
     {
+        //declaring my book fields to be user-filled
         private string title = null!;
         private string author = null!;
         private string genre = null!;
         private double numOfPages;
         private string bookLengthType = null!;
 
+        //method executed in Program.cs
         public void BookStart()
         {
             Console.Clear();
@@ -25,6 +26,7 @@ namespace ConsoleApps
             HelperMethods.ConfirmationButton();
         }
 
+        //get user input for title, author, and page count
         private void BookTitle()
         {
             Console.WriteLine("What is the name of your favourite fictional book?");
@@ -40,6 +42,8 @@ namespace ConsoleApps
         private void BookPageCount()
         {
             Console.WriteLine($"How many pages does {title} have?");
+
+            //do-while loop to make sure user input is a valid number
             var validInput = false;
             do
             {
@@ -55,11 +59,16 @@ namespace ConsoleApps
                 }
             } while (validInput == false);
             
-            //Round the user input page number to the closest hundreds
+            /* Task 5: Use the Math class
+             Math.Round() to get the user-input page number to the closest hundreds,
+             divide numOfPages by 100, Math.Round() to get rid of the decimal, and multiply by 100 to get the rounded result*/
             var pageMath = Math.Round(numOfPages / 100) * 100;
 
             switch (pageMath)
             {
+                /*if the user input number is below 50, this use of Math.Round would turn 'pageMath' into 0
+                 to catch this edge case, I have made sure that if the user enters a number below fifty,
+                'numOfPages' will be printed, instead of the rounded number in 'pageMath' */
                 case < 50:
                     Console.WriteLine($"Only around {numOfPages}? Sounds like a fun, shorter book!");
                     bookLengthType = "Short Story";
@@ -125,11 +134,26 @@ namespace ConsoleApps
             }
 
         }
+        private void DisplayBookInfo()
+        {
+            /*display user input information:
+              title, author, page count, selected or self-written genre, and type of book based on the entered page count*/
+
+            Console.WriteLine();
+            Console.WriteLine("------");
+            Console.WriteLine("So, your favourite book is:");
+            Console.WriteLine($"{title}, written by {author}");
+            Console.WriteLine($"A {numOfPages} page long {genre.ToLower()} {bookLengthType.ToLower()}");
+            Console.WriteLine("------");
+
+            BookRecommendation();
+        }
         private void BookRecommendation()
         {
             Console.WriteLine();
             Console.WriteLine("Based on your favourite book, may I recommend one of mine? (y/n)");
 
+            //do-while loop to ask the user if the want a book recommendation, making sure they enter a valid yes or no
             string readResult;
             bool validInput;
             bool wantsRecommendation = false;
@@ -151,7 +175,9 @@ namespace ConsoleApps
                     validInput = false;
                 }
             } while (validInput == false);
-            
+
+            //if 'yes' is entered, a switch case gives a book recommendation based on the entered genre or page count
+            bool defaultGenre = false;
             if (wantsRecommendation == true)
             {
                 switch (genre)
@@ -173,33 +199,27 @@ namespace ConsoleApps
                         Console.WriteLine("'Mistborn', written by Brandon Sanderson!");
                         break;
                     default:
+                        defaultGenre = true;
                         break;
                 }
-                switch (numOfPages)
+                //if another genre was input by the user, the BookRecommendation() recommends based on page count instead
+                if (defaultGenre == true)
                 {
-                    case < 450:
-                        Console.WriteLine($"I would recommend the fantasy mystery novel:");
-                        Console.WriteLine("'Mistborn', written by Brandon Sanderson!");
-                        break;
-                    case >= 450:
-                        Console.WriteLine($"I would recommend the fantasy adventure novel:");
-                        Console.WriteLine("'Name of the Wind', written by Patrick Rothfuss!");
-                        break;
+                    switch (numOfPages)
+                    {
+                        case < 450:
+                            Console.WriteLine($"I would recommend the fantasy mystery novel:");
+                            Console.WriteLine("'Mistborn', written by Brandon Sanderson!");
+                            break;
+                        case >= 450:
+                            Console.WriteLine($"I would recommend the fantasy adventure novel:");
+                            Console.WriteLine("'Name of the Wind', written by Patrick Rothfuss!");
+                            break;
+                    }
                 }
                 Console.WriteLine("------");
                 Console.WriteLine();
             }
-        }
-        private void DisplayBookInfo()
-        {
-            Console.WriteLine();
-            Console.WriteLine("------");
-            Console.WriteLine("So, your favourite book is:");
-            Console.WriteLine($"{title}, written by {author}");
-            Console.WriteLine($"A {numOfPages} page long {genre.ToLower()} {bookLengthType.ToLower()}");
-            Console.WriteLine("------");
-
-            BookRecommendation();
         }
     }
 }

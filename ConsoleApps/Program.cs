@@ -7,6 +7,7 @@
             var readResult = "";
             var exitProgram = false;
 
+            //Application "Main Menu", to make easier to select and return back to a class
             do
             {
                 Console.Clear();
@@ -17,8 +18,8 @@
                 Console.WriteLine("Or type 'Exit' to exit the application.");
                 Console.WriteLine();
 
+                //Switch case into the different classes
                 readResult = Console.ReadLine();
-
                 switch (readResult.ToLower())
                 {
                     case "1":

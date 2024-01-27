@@ -1,5 +1,6 @@
 ﻿namespace ConsoleApps
 {
+    //Task 3: Album class
     internal class Album
     {
         private string albumName = null!;
@@ -33,6 +34,8 @@
         private void ReadTracks()
         {
             Console.WriteLine($"How many tracks does {albumName} have?");
+
+            //do-while loop to make sure user input is a valid number
             var validInput = false;
             do
             {
